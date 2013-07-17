@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Rantdriven.Patterns.Reactor
+{
+    public class Acceptor : IEventHandler
+    {
+        private IDispatcher _dispatcher;
+        private TcpListener _listener;
+
+        public Acceptor(TcpListener listener, IDispatcher dispatcher)
+        {
+            _listener = listener;
+            _listener.Start();
+            _dispatcher = dispatcher;
+            _dispatcher.Register(this);
+        }
+
+        public void HandleRequest()
+        {
+             var client = _listener.AcceptTcpClient();
+            _dispatcher.Register(new EchoEventHandler(client, _dispatcher));
+        }
+
+        public Socket Handle
+        {
+            get { return _listener.Server; }
+        }
+    }
+}
