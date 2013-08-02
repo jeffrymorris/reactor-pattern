@@ -28,15 +28,11 @@ namespace Rantdriven.Patterns.Reactor
             {
                 received = Handle.Receive(buffer);
                 if (received <= 0) continue;
-                switch (Encoding.UTF8.GetString(buffer))
+                if(Encoding.UTF8.GetString(buffer) != Environment.NewLine)
                 {
-                    case "\r":
-                    case "\n":
-                    case "\r\n":
-                        Console.Write(Encoding.UTF8.GetString(data.ToArray()));
-                        Handle.Send(data.ToArray());
-                        data.Clear();
-                        break;
+                    Console.Write(Encoding.UTF8.GetString(data.ToArray()));
+                    Handle.Send(data.ToArray());
+                    data.Clear();
                 }
                 data.Add(buffer[0]);
             } while (received > 0);

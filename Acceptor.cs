@@ -22,8 +22,10 @@ namespace Rantdriven.Patterns.Reactor
 
         public void HandleRequest()
         {
-             var client = _listener.AcceptTcpClient();
+            Console.WriteLine("Connecting client");
+            var client = _listener.AcceptTcpClient();
             _dispatcher.Register(new EchoEventHandler(client, _dispatcher));
+
         }
 
         public Socket Handle
