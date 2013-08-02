@@ -1,6 +1,0 @@
-C:\cygwin\home\jefe\Source\reactor-pattern\bin\Debug\Rantdriven.Patterns.Reactor.exe.config
-C:\cygwin\home\jefe\Source\reactor-pattern\bin\Debug\Rantdriven.Patterns.Reactor.exe
-C:\cygwin\home\jefe\Source\reactor-pattern\bin\Debug\Rantdriven.Patterns.Reactor.pdb
-C:\cygwin\home\jefe\Source\reactor-pattern\obj\Debug\Rantdriven.Patterns.Reactor.exe
-C:\cygwin\home\jefe\Source\reactor-pattern\obj\Debug\Rantdriven.Patterns.Reactor.pdb
-C:\cygwin\home\jefe\Source\reactor-pattern\obj\Debug\Rantdriven.Patterns.Reactor.csprojResolveAssemblyReference.cache
