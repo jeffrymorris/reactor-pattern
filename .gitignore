@@ -4,3 +4,10 @@
 *.jar
 *.war
 *.ear
+
+#solution and project files#
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
