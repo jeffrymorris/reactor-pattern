@@ -31,7 +31,6 @@ namespace Rantdriven.Patterns.Reactor
                 if(Encoding.UTF8.GetString(buffer) != Environment.NewLine)
                 {
                     Console.Write(Encoding.UTF8.GetString(data.ToArray()));
-                    Handle.Send(data.ToArray());
                     data.Clear();
                 }
                 data.Add(buffer[0]);
