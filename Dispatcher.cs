@@ -7,10 +7,14 @@ using System.Threading.Tasks;
 
 namespace Rantdriven.Patterns.Reactor
 {
+    /// <summary>
+    /// Handles registering and unregistering of event handlers and hands off demuxed events to the correct handler
+    /// </summary>
     public class Dispatcher : IDispatcher 
     {
-        private readonly SynchronousEventDemultiplexer demux = new SynchronousEventDemultiplexer();
+        private readonly SynchEventDemultiplexer demux = new SynchEventDemultiplexer();
         private readonly IDictionary<Socket, IEventHandler> handlers = new Dictionary<Socket, IEventHandler>();
+        
         public void HandleRequests()
         {
             while (true)

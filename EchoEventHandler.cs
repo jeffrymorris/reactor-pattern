@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Rantdriven.Patterns.Reactor
 {
+    /// <summary>
+    /// Handles client connections and echos input to the console
+    /// </summary>
     public class EchoEventHandler : IEventHandler
     {
         private IDispatcher _dispatcher;
@@ -18,6 +21,10 @@ namespace Rantdriven.Patterns.Reactor
             _dispatcher = dispatcher;
         }
 
+        /// <summary>
+        /// Provides implementation specific processing of client input. More specifically
+        /// writes client input to the output stream (console).
+        /// </summary>
         public void HandleRequest()
         {
             var received = 0;
